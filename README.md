@@ -1,74 +1,77 @@
-# Agentic-ai
+# agentic-design-patterns
 
-## 项目简介
-本项目围绕吴恩达老师在 DeepLearning.AI 推出的 Agentic AI 系列课程，致力于为中文学习者提供高质量的课程内容翻译、系统化的知识梳理、关键概念解析以及配套示例代码的详细解读。项目不仅帮助学习者跨越语言障碍，更通过结构化整理与实践引导，深入理解“智能体”（Agent）在现代 AI 系统中的核心作用，掌握构建自主、协作、推理型 AI 应用的关键方法。
+用可執行的 Jupyter Notebook 動手實作 **Agentic AI 的設計模式**：反思（Reflection）、工具使用（Tool Use）、規劃（Planning）、多智能體（Multi-Agent），以及評估（Evaluation）。
 
-**在线视频课程地址：** [DeepLearning.AI - Agentic-ai](https://learn.deeplearning.ai/courses/agentic-ai/)
+每個設計模式都是一個資料夾，裡面放了幾個不同的範例。每個範例都包含 notebook 和它需要的程式碼與資料，說明全部使用繁體中文。
 
+## 目錄
 
+### 🔁 [reflection-design-pattern](reflection-design-pattern/)：反思
+讓 LLM 檢查自己的輸出，再根據回饋改進。
 
-## 项目友链
+| 範例 | 說明 |
+| --- | --- |
+| [chart-generation](reflection-design-pattern/chart-generation/) | 依咖啡銷售資料生成圖表，由多模態 LLM 審閱第一版圖表後重寫繪圖程式碼 |
+| [sql-generation](reflection-design-pattern/sql-generation/) | 把自然語言問題轉成 SQL，並透過反思修正查詢中的錯誤 |
 
-**agentic-ai：** 围绕 Agent Skills 的概念、使用方式、代码实践与课程内容进行翻译和梳理，帮助学习者更系统地学习如何创建一个适合自己的Agent Skills。 （[agentic-ai](https://github.com/datawhalechina/agentic-ai)）
+### 🛠️ [tool-use-design-pattern](tool-use-design-pattern/)：工具使用
+把 Python 函式交給 LLM，讓它自己決定什麼時候要呼叫哪個工具。
 
-**ai-prompting-for-everyone**：这门课程偏入门，重点不是讲复杂的模型原理，而是讲普通用户如何更好地向 AI 提问，如何把任务说清楚，如何让 AI 给出更符合需求的回答。 （[ai-prompting-for-everyone](https://github.com/datawhalechina/ai-prompting-for-everyone)）
+| 範例 | 說明 |
+| --- | --- |
+| [functions-as-tools](tool-use-design-pattern/functions-as-tools/) | 用 `aisuite` 把一般函式變成 LLM 可呼叫的工具 |
+| [email-assistant](tool-use-design-pattern/email-assistant/) | 郵件助理智慧體：用自然語言查詢、寄送、刪除郵件 |
 
+### 🗺️ [planning-design-pattern](planning-design-pattern/)：規劃
+讓 LLM 直接寫程式碼當作計畫並執行，完成多步驟任務。
 
+| 範例 | 說明 |
+| --- | --- |
+| [customer-service-agent](planning-design-pattern/customer-service-agent/) | 太陽眼鏡商店客服：LLM 撰寫 Python 程式來查詢與更新庫存及交易紀錄 |
 
+### 👥 [multi-agent-design-pattern](multi-agent-design-pattern/)：多智能體
+讓多個代理、工具與模型協作，組成一條完整的工作流。
 
-## 项目受众
-- 对 Agentic AI 感兴趣
-- 正在系统学习 LLM 高级应用
-- 希望掌握 LLM 与本地工具集成
-- 计划基于开源模型构建领域专用智能体
-- 关注 AI 自动化流程 与 任务协作系统
+| 範例 | 說明 |
+| --- | --- |
+| [market-research-team](multi-agent-design-pattern/market-research-team/) | 市場調研團隊：搜尋流行趨勢 → 對應商品 → 生成活動視覺與文案 → 產出高管報告 |
 
-## 项目亮点
-- 精准的中英对照翻译：忠实还原原课程技术细节，兼顾术语准确性与中文表达流畅性
-- 结构化知识图谱：将课程内容拆解为“概念 → 原理 → 架构 → 代码”四层知识体系，便于系统掌握
-- 配套代码深度解读：不仅提供示例代码，更详解其设计思路、依赖库使用及可扩展性建议
-- 结合本地工具实践场景：示例融入文件读写、API 调用、数据处理等实用功能
-- 持续更新与社区共建：随课程迭代同步更新，欢迎贡献翻译、笔记或教程，共建中文 Agentic AI 学习生态
-  
-⭐ 欢迎 Star、Fork 与 PR，一起打造最好的 Agentic AI 学习资源！
+### 📏 [evaluation](evaluation/)：評估
+量測 agentic 工作流中各個元件的表現。
 
+| 範例 | 說明 |
+| --- | --- |
+| [component-level-eval](evaluation/component-level-eval/) | 針對研究步驟做元件級評估，檢查檢索來源是否來自可信網域 |
 
+## 快速開始
 
-## 项目规划
+```bash
+pip install jupyter python-dotenv aisuite openai anthropic pandas matplotlib \
+            tinydb tavily-python wikipedia duckdb qrcode requests pillow
+```
 
-| 章节 | 负责人 | 状态 |
-| --- | --- | --- |
-| Module 1: Introduction to Agentic Workflows | 陈辅元 | ✅ |
-| Module 2: Reflection Design Pattern | 陈辅元 | ✅ |
-| Module 3: Tool use | 陈辅元 | ✅ |
-| Module 4: Practical Tips for Building Agentic AI | 杨若朴 | ✅ |
-| Module 5: Patterns for Highly Autonomous Agents | 杨若朴 | ✅ |
+在專案根目錄建立 `.env`，填入要用到的 API 金鑰：
 
+```
+OPENAI_API_KEY=...
+ANTHROPIC_API_KEY=...
+TAVILY_API_KEY=...
+```
 
-## 致谢
+接著進入任一範例資料夾，開啟其中的 `.ipynb` 依序執行即可：
 
-- 特别感谢 [@Datawhale](https://github.com/datawhalechina) 对本项目的支持
-- 如果有任何想法可以联系我们，也欢迎大家多多提出 issue
-- 特别感谢以下为教程做出贡献的同学！
-<div align=center style="margin-top: 30px;">
-  <a href="https://github.com/datawhalechina/agentic-ai/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=datawhalechina/agentic-ai" />
-  </a>
-</div>
+```bash
+cd reflection-design-pattern/chart-generation
+jupyter notebook chart_generation.ipynb
+```
 
+> 每個範例都是獨立的，`utils.py` 等輔助檔案必須和 notebook 放在同一個資料夾。
 
-## 关注我们
+## 致謝
 
-<div align=center>
-<p>扫描下方二维码关注公众号：Datawhale</p>
-<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/qrcode.jpeg" width = "180" height = "180">
-</div>
-
-## Star History
-
-[![Star History Chart](https://star-history.dera.page/svg?repos=datawhalechina/agentic-ai&type=date&legend=top-left)](https://star-history.dera.page/#datawhalechina/agentic-ai&type=date&legend=top-left)
+- 課程內容來自 [DeepLearning.AI - Agentic AI](https://learn.deeplearning.ai/courses/agentic-ai/)
+- 本專案改編自 [datawhalechina/agentic-ai](https://github.com/datawhalechina/agentic-ai) 的中文翻譯，感謝原專案的所有貢獻者
 
 ## License
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
-
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知識共享授權條款" style="border-width:0" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey" /></a><br />本作品採用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">創用 CC 姓名標示-非商業性-相同方式分享 4.0 國際授權條款</a>授權。
