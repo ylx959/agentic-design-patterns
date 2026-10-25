@@ -4,6 +4,8 @@
 
 每個設計模式都是一個資料夾，裡面放了幾個不同的範例。每個範例都包含 notebook 和它需要的程式碼與資料，說明全部使用繁體中文。
 
+如果想要了解更多[agentic-ai](https://github.com/datawhalechina/agentic-ai)底層邏輯與觀念,請去這個連結,此repo代碼也都是從那裡來的。
+
 ## 目錄
 
 ### 🔁 [reflection-design-pattern](reflection-design-pattern/)：反思
@@ -44,6 +46,8 @@
 | [component-level-eval](evaluation/component-level-eval/) | 針對研究步驟做元件級評估，檢查檢索來源是否來自可信網域 |
 
 ## 快速開始
+
+這些code 你可以去google colab 執行,記得要把套件一起放過去, 但如果你想在本地端執行請依照下面步驟：
 
 ```bash
 pip install jupyter python-dotenv aisuite openai anthropic pandas matplotlib \
